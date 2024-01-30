@@ -11,18 +11,18 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handlePrevious = () => {
-    setStepVal(stepVal - 1 < 1 ? 1 : stepVal - 1);
+    setStepVal((s) => (s > 1 ? s - 1 : 1));
   };
   const handleNext = () => {
-    setStepVal(stepVal + 1 > 3 ? 3 : stepVal + 1);
+    setStepVal((s) => (s >= 3 ? 3 : s + 1));
   };
 
   const handleClose = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((s) => !s);
   };
 
   return (
-    <div>
+    <>
       <button className="close" onClick={handleClose}>
         &times;
       </button>
@@ -52,7 +52,7 @@ const App = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
