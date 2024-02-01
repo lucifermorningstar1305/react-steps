@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import Button from "./components/Button";
 
 const messages = [
   "Learn React ⚛️",
@@ -37,18 +38,16 @@ const App = () => {
             Step {stepVal}: {messages[stepVal - 1]}
           </p>
           <div className="buttons">
-            <button
-              style={{ backgroundColor: "#7950F2", color: "#FFFFFF" }}
+            <Button
+              bgColor="#7950F2"
+              textColor="#FFFFFF"
               onClick={handlePrevious}
             >
-              Previous
-            </button>
-            <button
-              style={{ backgroundColor: "#7950F2", color: "#FFFFFF" }}
-              onClick={handleNext}
-            >
-              Next
-            </button>
+              <span>👈</span> Previous
+            </Button>
+            <Button bgColor="#7950F2" textColor="#FFFFFF" onClick={handleNext}>
+              Next<span>👉</span>
+            </Button>
           </div>
         </div>
       )}
